@@ -1,0 +1,21 @@
+DMitry: (Deep Magic Information Gathering Tool)
+-------
+* It is a Linux based command line appication coded in "C Language".
+
+* It will gather the information about a host.
+
+* Specifically: sub domains, email addresses, uptime, TCP port scan, etc.
+
+* options: -i, -w, -s, -e, -p, -o
+
+* syntax: dmitry [options] [IP address/domain]
+
+* Ex:	
+	1. dmitry -i becbapatla.ac.in
+	2. dmitry -w facebook.com
+	3. dmitry  -s alexa.com
+	4. dmitry  -p 192.168.71.128
+	5. dmitry  -pf google.com
+	6. dmitry  -e facebook.com
+	7. dmitry -n alexa.com
+	8. dmitry -iweso /root/Desktop/info.txt becbapatla.ac.in

@@ -1,0 +1,83 @@
+Cross site scripting:
+---------------------
+> It is also known as "XSS attack".
+
+> It is a client-side attack.
+
+> It is a secuity vulnerability found in web applications.
+
+> It allows hackers to inject client-side script into web pages.
+
+> And later if that web page is viewed by others, the stored scripts get
+executed.
+
+> Consequences may like displaying alert messages and stealing
+ session cookies, session id's.
+
+> This attack is found in web applications, where the user provides
+input to an input receiving areas like search box, forms etc.
+
+> If the user provides proper input, it will be processed by the web app.
+
+> If the user provides java script code instead of providing the valid input,
+if that is processed by the web application, then we can assume that
+cross site scripting is happened on that web app.
+
+> It is classified into2 types:
+1. Reflected/Non-persistent cross site scripting
+2. Stored/Persistent cross site scripting
+
+> In Reflected scripting, the user input is not stored in the database.
+The executed script(response from web app) is showned to the user only.
+
+> In Stored scripting, the user input is stored in the database.
+
+> For demonstration we are using "DVWA" in kali linux 2016.
+
+> DVWA is a vulnerability web application, which is available in "github.com"
+
+> Once the zip file is downloaded, extract it to the desktop and rename
+it to "dvwa".
+
+> Cut the extracted folder and paste it in "/var/www/html".
+
+> Open a terminal, and change the default directory to "/var/www/html".
+
+> Change the permissions as "chmod -R 775 dvwa"
+
+> Start the apache tomcat service as "service apache2 start"
+
+> Start the mysql service as "service mysql start"
+
+> Login to the mysql as "mysql -u root -p"
+
+> Press enter when it ask to enter password.
+
+> Create a database in mysql as "create database dvwa".
+
+> Open a browser and type the url "/localhost/dvwa".
+
+> Open config file from "/var/www/html/dvwa/config" and remove the 
+password field value and leave it as blank and save the file and remove
+".dist" extension from its file name.
+
+> Open a browser and type the url "/localhost/dvwa".
+
+> Use the default credentials as "admin", "password".
+
+> Scroll down and click on "Create database"
+
+Examples:
+---------
+1. Low level security, <script>alert("Hi")</script>
+
+2. Medium level security, <script>alert("Hi")</script>. It won't work,
+check page source and it clearly indicates that opening tag of <script>
+is removed. Try <scr<script>ipt>alert("Hi")</script>,
+<SCRIPT>alert("Hi")</script>.
+
+3. Impossible level security, <script>alert("Hi")</script>. It won't work,
+with the help of regexp the character from <script> is replaced with an
+empty string. Try <img src="x" onError=alert("Hi")/>
+
+

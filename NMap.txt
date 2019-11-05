@@ -1,0 +1,15 @@
+NMap: (Network Mapper)
+-----
+
+* options: 
+		1. -F 			: Fast scan
+		2. -v			: Verbose mode of scan
+		3. -V | --version	: version of NMap tool
+		4. -p			: Port scan
+		5. -O 			: OS detection
+		6. --open		: Open port scan
+		7. -iL			: Read the targets from the input file
+		8. -oN 			: Store the command output in a file
+		9. -sP			: Finding live hosts
+		10 --exclude		: Excluding the targets while scanning
+		11. --excludefile	: Excluding the targets (input file) while scanning

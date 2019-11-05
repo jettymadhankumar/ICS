@@ -1,0 +1,176 @@
+
+Firewall:
+---------
+> It is a system that is designed to prevent unauthorized access from 
+entering a private network by filtering the information that comes in 
+from the internet.
+
+> It will block unwanted traffic and it permits only wanted traffic.
+
+> It creates a safety barrier between a private n/w and public n/w.
+
+> It is more important to the large organizations which has a lot of 
+computers and servers.
+
+> It stops harmful activity before it can spread into the other side of
+the firewall and cause harm to the private network.
+
+> It is essential in Business organizations to keep their network safe.
+
+> It will work by filtering the incoming network data and determines by 
+its rules if it is allowed into the network or not.
+
+> Firewall rules are also known as "Access control list".
+
+> These rules are cutomizable and determined by the network administrator.
+
+> The administrator will decide what can enter into the network and what
+can leave from the network.
+
+> These rules either allows or denies permissions.
+
+> Firewall rules can be based on IP addresses, domain names, protocols,
+ programs, ports, keywords.
+
+> Types of firewall:
+	1. Host-based firewall: > It is a software firewall, that is installed
+				on a computer and it protects that computer
+				only. 
+				> All latest versions of windows comes with
+				a host-based firewall.
+				> "Zone alarm" is a popular third-party
+				host-based firewall.
+				> A lot of antivirus programs comes with 
+				a host-based firewall.
+
+	2. Network-based firewall: > It is the combination of hardware & 
+				software and it operates at the network 
+				layer.
+				> It places between private and public 
+				network.
+				> It will protects the entire network.
+				> Stand-alone firewall, used by large org's.
+				> Routers have built in firewall, used
+				by small org's.
+				> They can also be deployed on service
+				providers cloud infrastructure.
+
+
+IPTables:
+----------
+> It is standard firewall for linux systems such as Ubuntu, Fedora, Kali etc.
+
+> It is a Linux firewall which is used to monitor incoming and outgoing traffic.
+
+> All data is sent in the form of packets over the internet.
+
+> This is a command line application tool is used to manage the 
+Linux firewall rules.
+
+> Structure of IPTables: IPTables->Tables->Chains->Rules
+
+> Each rule defines what to do with the packet (ACCEPT, DROP, RETURN)
+	ACCEPT: Packet will be allowed.
+	DROP:	Packet will be dropped.
+	RETURN:	Skip the current rule and go back to the next rule from the chain.
+
+> Each rule contains a criteria and a target.
+
+> IPTables have 4 predefined tables:
+	1. Filter table
+	2. NAT table
+	3. Mangle table
+	4. Raw table
+
+1. Filter table:
+-----------------
+> This table has the following built-in chains:
+	a. INPUT: Used to filter the incoming packets. We can allow/block based on 
+		port, protocol, IP address.
+	b. OUTPUT: Used to filter the packets that are going out. 
+	c. FORWARD: Used to filter the packets that are incoming but they are to 
+			be forwarded somewhere else.
+
+2. NAT table:
+-------------
+	a. PREROUTNG: Alter packets before routing. (Destination IP address)
+	b. POSTROUTING: Alter packets after routing. (Source IP address)
+	c. INPUT.
+	c. OUTPUT.
+
+3. Mangle table:
+-----------------
+	a. INPUT
+	b. OUTPUT
+	c. FORWARD
+	d. PREROUTNG
+	e. POSTROUTING
+
+4. Raw table:
+-------------
+	a. PREROUTNG
+	b. OUTPUT
+
+> To install IPTables use:
+	
+	sudo apt-get install iptables
+
+> To view the Filter table use:
+
+	iptables -t filter --list	(or)	iptables --list
+
+> To view the NAT table use:
+
+	iptables -t nat --list
+
+> To view the Mangle table use:
+
+	iptables -t mangle --list
+
+> To view the Raw table use:
+
+	iptables -t raw --list
+
+> If we don't specify the -t option, it will display the default filter table.
+
+> To list all the rules use:
+
+	sudo iptables -L
+
+> If there are no rules, all packets will be transferred without filtering.
+
+> Commonly used options in IPTables:
+	1. -s: source address
+	2. -d: destination address
+	3. -p: protocol
+	4. -j: action
+	5. -P: Policy
+	6. -A: Append/Add a rule at the end of a chain
+	7. -D: Delete a rule from a chain
+	8. -L: List all chain rules
+	9. -F: Removes all rules from a chain
+
+> To block any website use the following:
+
+	1. To get ipaddress of a website: 
+		
+			dmitry becbapatla.ac.in
+
+	2. To add a rule in IPtables:
+		
+			iptables -A OUTPUT -j DROP -d 52.95.116.115
+
+	3. To delete a rule:
+			
+			iptables -D OUTPUT -j DROP -d 52.95.116.115	
+			iptables -D OUTPUT 3(Sq no)
+			iptables -F
+
+> To avoid ping scans from external source, we must avoid icmp conncetion
+
+	iptables -A INPUT -j DROP -p icmp -i eth0
+
+> To change the policy of a chain:
+	
+	iptables -P FORWARD DROP	
+			

@@ -1,0 +1,42 @@
+DOS attack: (Denail of Service)
+--------------------------------
+> It is a type of attack, where the attackers attempt to prevent users 
+from accessing the service.
+
+> It is an attack, used to deny legitimate users access to a resource such
+as accessing a website, network, emails etc.
+
+> This attack floods the target machine with excessive requests to overload
+systems.
+
+> Hitting the target resource with too many requests at the same time.
+
+> Then the server fail to respond to all requests. And the server may
+crash or slow them down.
+
+
+> DOS attack can cause the following problems:
+	a. Ineffective services.
+	b. Inaccessible services.
+	c. Interruption of network traffic.
+	d. Connection interference.
+
+
+
+Installation of Pentmenu master tool:
+--------------------------------------
+1. cd Desktop
+2. git clone https://github.com/GinjaChris/pentmenu.git
+3. ls
+4. cd pentmenu
+5. ls
+6. chmod +x pentmenu
+7. ./pentmenu
+8. 2
+9. 7
+10. Enter your target. (Eg: becbapatla.ac.in)
+11. Enter target port. (Default port:80)
+12. Enter no.of connections to open. (Default:2000) 
+13. Choose the time interval between 5 and 15 seconds.
+14. Use SSL/TLS: y
+15. Open a browser and enter the url of your target.

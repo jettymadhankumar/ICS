@@ -1,0 +1,51 @@
+Nessus:
+--------
+* It is one of the most popular "Vulnerability scanning tool", which allows us to detect the vulnerabilities in the system.
+* Founder "Renuad Deraison" in the year 1998.
+* It uses the web interface to set up, scan and view reports.
+* It has one of the largest vunerability knowledge base.
+* It supports wide range of operating systems.
+* Key features:
+	1. Identifies Vulnerabilities that allow a remote attacker to access sensitive information from the system.
+	2. Checks whether the systems in the network has the latest software patches.
+	3. Tries with Default passwords, common passwords, on systems account
+	4. Configuration audits.
+	5. Vulnerability analysis.
+	6. Mobile Device audits.
+	7. Customized reporting
+
+Installation Procedure of Nessus:
+---------------------------------
+* Open a browser in Kali linux.
+* Go to "https://www.tenable.com".
+* Go to "Downloads"
+* Choose "Nessus" from the available options.
+* Click on "Nessus-8.6.0-debian6_amd64.deb" to download.
+* Click on "I agree" in the license agreement.
+* While downloading at the top of same page, click on "Get Activation Code"
+* Click on "Register Now".
+* Fill all the basic details of the form, and click on "Register".
+* We will get the "Activation code" to the registered email.
+* Open a terminal, change the directory to "Downloads" as "cd Downloads".
+* To install the Nessus use "dpkg -i Nessus-8.6.0-debian6_amd64.deb".
+* Once the installation is done, then start the Nessus as "/etc/init.d/nessusd start".
+* Open a browser, then go to "https://localhost:8834/" to configure the scanner.
+* If we get an exception, add it.
+* We need to create an account.
+* Then register your scanner with an activation code and click on "continue".
+* Initializing the nessus scanner will take time based on the internet connection speed.
+* It will download all necessary plugins.
+* Then it will automatically redirected to the login screen, we can login using credentials.
+
+To scan using Nessus:
+----------------------
+* Click on "New scan"
+* Choose "Advanced scan"
+* Define the Name, Description, Targets and click on "Save".
+* Click on "Play button" to start the scanning process.
+* Check the "Vulnerabilities" after scanning.
+
+
+ 
+
+

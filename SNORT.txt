@@ -1,0 +1,135 @@
+Installation of Snort:
+----------------------
+1. apt-get update
+2. sudo apt-get install snort
+3. define the subnet range (default 192.168.1.1/16)
+
+SNORT:
+--------
+> It is an open source IDS (Intrusion Detection System) & IPS((Intrusion 
+Prevention)
+
+> Created by "Martin Roesch"
+
+> An intruder is a person who attempts to gain unauthorized access to 
+a system.
+
+> An IDS is a device or software that monitors the network for any suspicious
+activites and gives alerts.
+
+> Snort analyzes the network traffic (Incoming & Outgoing packets)
+
+> It detects Vulnerability exploit attempts & Suspicious activities.
+
+> It uses a "Flexible rule based language".
+
+> It can be run in 4 modes:
+	
+	1. Sniffer mode.
+	2. Packet logger mode.
+	3. IDS mode.
+	4. IPS mode.
+
+> Sniffer mode is used to intercept the data(decode the data and display 
+it in human readable format). It is also used for troubleshooting and 
+analyzing the data.
+
+> Snort can be run in sniffer mode using the following command:
+
+        sudo snort -v
+
+> To store the network traffic in a file, then use snort in packet logger
+mode by using the following command:
+
+	sudo snort -l /root/Desktop/snort
+
+> To read the content from the work directory use:
+
+	sudo snort -r /root/Dektop/snort/snort.log
+
+> To find out the suspicious activities in a netwrok, then use snort in
+IDS mode.
+
+> Snort will apply rules to network traffic and alerts the network administrator
+about the suspicious activities.
+
+> Snort contains 2 kinds of files:
+
+	1. Rules files
+	2. Configuration files
+
+> These files can be found in the following directory:
+
+	/etc/snort/rules
+
+> "Snort.conf" is a configuration file, which contains rules as a statements
+
+> When we run "Snort.conf" file the rules will be applied on the network
+traffic.
+
+> Snort rules are written "Rules files". And these files should be 
+mentioned in "Snort.conf" file.
+
+> To write snort rules, we need to create a file with ".rules" extension.
+
+> We can define multiple rules in a single rule file.
+
+> A snort rule is a set of keywords & arguments.
+
+> Snort rule contains 2 parts:
+	
+	1. Rule header
+	2. Rule body
+
+> Snort rules are structured as follows:
+	
+	<rule actions><protocol><source ip><source port>
+<direction operator><destination ip><destination port>(rule options)
+	
+	a. rule actions: specifies what action need to take when malcious
+			content is found. Possible actions are:
+
+			> alert: log the event and send an alert message
+			> pass: Ignore the packet
+			> log: Log the packet
+
+	b. protocol: tcp, udp, ip, icmp
+	c. source ip: any
+	d. source port: any
+	e. direction operator: -> (single direction), <> (bi-direction)
+	f. destination ip: any
+	g. destination port: any
+	h. rule options: (msg:"XXX XXXX"; sid:12345; rev:1;)
+
+> Rule body contains various options which specifies conditions to 
+identify the malicious content.
+
+> Most commonly used options are: msg, sid, content, nocase
+
+> "msg" contains the message that needs to be displayed to the user about
+the type of activity.
+
+> "sid" identifies a snort rule uniquely.
+
+> "content" specifies the content which is to be checked with packet data.
+If it matches, then the corresponding action will be taken.
+
+> If we specify "nocase" means the content is not case-sensitive.
+
+> To run the defined rules, we need to execute "Snort.conf" as:
+	
+	snort -A console -c /etc/snort/snort.conf
+
+Examples:
+----------
+1. To assign our system ip to a variable HOME_NET in snort.conf
+
+	ipvar HOME_NET 192.168.1.1
+
+2. Alert if someone pings our system
+
+	alert icmp !$HOME_NET any -> $HOME_NET any (msg:"Someone pinged!!!";sid:1234)
+
+3. alert icmp any any -> any any (msg:"Someone pinged..!"; sid:12345)
+
+4. alert tcp any any -> any any (msg:"Someone opened facebook..!"; content:"facebook.com"; sid:54321)

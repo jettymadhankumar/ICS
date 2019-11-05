@@ -1,0 +1,105 @@
+First Virus:
+------------
+In 1971, "Creeper" virus is a self-replicating program written by "Bob Thomas"
+to infect the computer's running "TENEX" OS.
+
+Viruses
+-------
+> It is also known as "Malware".
+
+> Viruses, Worms & Trojan horses are malicious programs, that can cause
+damage to the computer.
+
+> A file containing a virus is called "Infected file".
+
+> If that infected file is copied to another system, the virus is also
+copied.
+
+> A virus attaches itself to a program (or) an application (or) a file,
+enabling it to spread from one system to the other.
+
+> Like a human virus, computer virus can cause different types of severity.
+
+> Some can cause mild annoying effects and some can cause damage to files,
+hardware & software.
+
+> They are intended to modify the functionality of a program. For example,
+if a virus in our system, that opens with the media player, it will delete
+the files our system.
+
+> All viruses are attached to an executable file.
+
+> A virus may exist on our computer, but it actually cannot infect our
+system, untill we run or open the malicious program.
+
+> It is important to note that, a virus cannot spread without human action.
+
+Phases of virus:
+----------------
+1. Dormant Phase: In this phase, the virus is idle and it will be activated
+by some events.
+
+2. Propagation Phase: In this phase, the virus places an identical copy 
+of itself into other programs.
+
+3. Triggering Phase: In this phase, the virus is activated by some events
+and to perform its functionality for which it was intended.
+
+4. Execution Phase: In this phase, the virus will perform its functionality
+ for which it was intended.
+
+Causes of virus:
+----------------
+1. Infected flash drives or disks.
+2. Email attachments.
+3. Infected/Pornography websites.
+4. Networks.
+5. Pirated software.
+
+Types of virus:
+----------------
+1. Parasitic virus.
+2. Memory-resident virus.
+3. Boot sector virus.
+4. Stealth virus.
+5. Polymorphic virus.
+6. Macro virus.
+7. E-mail virus.
+8. Ripper.
+9. MDMA.
+10. One_Half.
+
+Worm:
+-----
+> A "Worm" is similar to computer virus by design and it is considered as
+the sub class of virus.
+
+> Worms can spread from system to system, but unlike virus it has the 
+capability to travel without human action.
+
+> The biggest danger with worm is that it has the capability to replicate
+itself on our system.
+
+> Due to the copying nature of a worm and it has the capability to travel
+across the networks, a worm consumes too much system memory (or) network
+bandwidth.
+
+> Worm consumes lots of computer resources, which makes our system slow.
+
+
+Trojan Horse:
+-------------
+> A trojan horse, appears to be a useful software, but it actually do damage
+to the system when it is installed.
+
+> It is a hidden piece of code, intended to leak the sensitive information.
+
+> The receiving end of trojan horse, usually tricked the user to open that.
+
+> Some trojans are designed to be annoying, by changing your desktop icons
+or they can cause serious damage by destroying files on our system.
+
+> Some trojans may create a backdoor on our system, that gives malicous
+users to access our system. And the personal information will be comprimised.
+
+> Like viruse and worms, trojans do not replicate itself.  
